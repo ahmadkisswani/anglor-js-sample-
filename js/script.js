@@ -6,13 +6,12 @@
 var app= angular
 .module("mymodule",[])
 .controller("mycontroller",function($scope ){
-   
+
  var langs=[
 {name:"java",like:0,dislike:0,price:2},
 {name:"c++",like:0,dislike:0,price:2},
 {name:"c#",like:0,dislike:0,price:2},
-{name:"python",like:0,dislike:0,price:2},
-{name:"Node.js",like:0,dislike:0,price:10}
+{name:"python",like:0,dislike:0,price:2}
 
 
  ];
@@ -24,7 +23,7 @@ var app= angular
 // 
 
  $scope.step=0.1;
- 
+
   $scope.steptolike=1;
 // $scope.submit=function (){
 //     if($scope.text){
@@ -43,41 +42,31 @@ var app= angular
  };
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 $scope.range= function (langs){
-    
+
     langs.price+= $scope.value+$scope.step;
 };
 $scope.countp= function (langs){
-    
+
     langs.like+= $scope.value+$scope.steptolike;
 };
 $scope.countm= function (langs){
-    if(langs.like<=0){
-       return
-    
-   else{
+    if(langs.like<=0){return }else{
     langs.like+= $scope.value-$scope.steptolike;}
 };
 
 $scope.drange= function (langs){
     if(langs.price>0){
-       
-    langs.price-= $scope.step;
-    }
-
-  else{
-     return
-  }
-     
-  };
+    langs.price-= $scope.step;}
+};
 // ********************************************************
 $scope.search=function (item){
                 if($scope.searchText==undefined){ return true;}
                 else{ if(item.name.toLowerCase().indexOf($scope.searchText.toLowerCase())!= -1
                 ||  item.like.toString().toLowerCase().indexOf($scope.searchText.toLowerCase())!= -1          
-                
+
                 ){ return true;}
                 else{ return  false;}}
 }
 //**********************************************************
 
-});
+}); 
