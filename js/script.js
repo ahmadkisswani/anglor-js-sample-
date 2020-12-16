@@ -62,7 +62,7 @@ $scope.drange= function (langs){
     if(langs.price>0){
        
     langs.price-= $scope.step;}
-}
+
   else{
      return
      
