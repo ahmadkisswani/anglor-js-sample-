@@ -53,7 +53,7 @@ $scope.countp= function (langs){
 $scope.countm= function (langs){
     if(langs.like<=0){
        return
-    }
+    
    else{
     langs.like+= $scope.value-$scope.steptolike;}
 };
@@ -61,10 +61,12 @@ $scope.countm= function (langs){
 $scope.drange= function (langs){
     if(langs.price>0){
        
-    langs.price-= $scope.step;}
+    langs.price-= $scope.step;
+    }
 
   else{
      return
+  }
      
   };
 // ********************************************************
