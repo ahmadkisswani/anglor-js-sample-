@@ -11,7 +11,8 @@ var app= angular
 {name:"java",like:0,dislike:0,price:2},
 {name:"c++",like:0,dislike:0,price:2},
 {name:"c#",like:0,dislike:0,price:2},
-{name:"python",like:0,dislike:0,price:2}
+{name:"python",like:0,dislike:0,price:2},
+{name:"Node.js",like:0,dislike:0,price:10}
 
 
  ];
@@ -50,14 +51,22 @@ $scope.countp= function (langs){
     langs.like+= $scope.value+$scope.steptolike;
 };
 $scope.countm= function (langs){
-    if(langs.like<=0){return }else{
+    if(langs.like<=0){
+       return
+    }
+   else{
     langs.like+= $scope.value-$scope.steptolike;}
 };
 
 $scope.drange= function (langs){
     if(langs.price>0){
+       
     langs.price-= $scope.step;}
-};
+}
+  else{
+     return
+     
+  };
 // ********************************************************
 $scope.search=function (item){
                 if($scope.searchText==undefined){ return true;}
