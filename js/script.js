@@ -11,7 +11,8 @@ var app= angular
 {name:"java",like:0,dislike:0,price:2},
 {name:"c++",like:0,dislike:0,price:2},
 {name:"c#",like:0,dislike:0,price:2},
-{name:"python",like:0,dislike:0,price:2}
+{name:"python",like:0,dislike:0,price:2},
+{name:"Node.js",like:0,dislike:0,price:2}
 
 
  ];
