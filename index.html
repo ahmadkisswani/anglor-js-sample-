@@ -1,0 +1,223 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+    <script src="style/all.min.js"></script>
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="style/bootstrap.css"/>
+    <link rel="stylesheet" href="style/all.min.css"/>
+    <style>
+        
+        table table {
+  width: 100%;
+ 
+}
+body{
+    width: 100%;
+
+height: 100%;
+}
+html{
+    
+    width: 100%;
+    height: 100%;
+}
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height:320px;
+  margin:auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+.topcolor{
+    width: 100%;
+    
+    height: 40%;;
+    background-image: url(style/4K-Wide-Wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    margin: 0px;
+    padding: 0px;
+}
+#cen1{padding-left: 20%;
+padding-top: 8%;
+}
+
+
+#search{
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:5px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+table{
+    margin-top: 0%;
+    width:100%;
+}
+    </style>
+</head>
+
+
+<body ng-app="mymodule">
+  <div ng-controller="mycontroller">
+      <div class="topcolor"
+      <center id="cen1">
+          <label for="search" style="color: #EBEBEB ;font-size:20px;" > <i class="fas fa-search" style="font-size:20px;"></i>&nbsp; SEARCH</label> &NegativeThickSpace;&hairsp; 
+          <input type="search"placeholder="search in the table"  name="search"  id="search" ng-model='searchText'>
+      </center>
+
+  </div>
+   <table>
+       <thead>
+       <tr>
+<th>اسم القطعه</th>
+<th style="text-align: center">العدد</th>
+
+<th style="text-align: center">السعر</th>
+
+
+
+       </tr>
+    </thead>
+    <tbody>
+<tr ng-repeat="langs in langs |  filter:search">
+
+   <td style="text-align:center">{{langs.name | uppercase}}</td>
+   <td style="text-align:center">{{langs.like | number}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button  ng-click="countp(langs)" class="btn btn-primary">up &nbsp;<i class="fas fa-chevron-circle-up"></i></button> 
+       &nbsp;&nbsp; <button ng-click="countm(langs)"  class="btn btn-danger"> down &nbsp;<i class="fas fa-chevron-circle-down"></i></button></td>
+   
+   <td style="text-align:center">{{langs.price | currency:$}}     &nbsp;&nbsp; <button  ng-click="range(langs)" class="btn btn-primary">up &nbsp;<i class="fas fa-chevron-circle-up"></i></button> 
+       &nbsp;&nbsp; <button ng-click="drange(langs)"  class="btn btn-danger"> down &nbsp;<i class="fas fa-chevron-circle-down"></i></button> </td>
+       
+       
+       
+      
+        
+      
+    
+    </td>
+    
+</tr>
+
+    </tbody>
+
+
+   </table></center>
+        
+    </div>
+
+</body>
